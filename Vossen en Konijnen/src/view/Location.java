@@ -2,7 +2,7 @@ package view;
 /**
  * Represent a location in a rectangular grid.
  * 
- * @author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ * @author Bastiaan Vreijsen, Christian Hilbrands, Georg Duees
  * @version 2012.11.13
  */
 public class Location

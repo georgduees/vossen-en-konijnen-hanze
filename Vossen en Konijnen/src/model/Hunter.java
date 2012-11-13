@@ -7,11 +7,10 @@ import java.util.List;
 import view.Field;
 import view.Location;
 /**
- * A class representing a Hunter. A hunter is an actor, but not an animal. 
- * It has no age, instead, it is active or not.
- * 
- * @author Tycho Marinus, Cor Sloot, Mark Visscher, Luuk Blom
+ *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ * @version 2012.11.13
  */
+
 public class Hunter implements Actor {
 	//int that decides how many kills the hunter makes.
     private  int hunterKillSteps;

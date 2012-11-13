@@ -2,11 +2,10 @@ package model;
 
 
 /**
- * This is a final class with all the numbers in it that can be changed while the 
- * simulation is running.
- * 
- * @author Tycho Marinus, Cor Sloot, Mark Visscher, Luuk Blom
+ *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ * @version 2012.11.13
  */
+
 public final class AnimalNumbers 
 {
 	//Parameters for the fox.

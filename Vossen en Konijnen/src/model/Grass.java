@@ -5,9 +5,10 @@ import java.util.List;
 import view.Field;
 import view.Location;
 /**
- * A class to represent Grass, food for the prey.
- * @author Tycho Marinus, Cor Sloot, Mark Visscher, Luuk Blom
+ *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ * @version 2012.11.13
  */
+
 public class Grass implements Actor 
 {
     

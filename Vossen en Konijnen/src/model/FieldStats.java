@@ -3,11 +3,10 @@ import view.Field;
 
 
 /**
- * This class collects and provides some statistical data on the state 
- * of a field. 
- * 
- * @author Tycho Marinus, Cor Sloot, Mark Visscher, Luuk Blom
+ *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ * @version 2012.11.13
  */
+
 public class FieldStats
 {
     // Counters for each type of entity (fox, rabbit, etc.) in the simulation.

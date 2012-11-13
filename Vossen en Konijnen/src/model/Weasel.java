@@ -6,12 +6,10 @@ import java.util.List;
 import view.Field;
 import view.Location;
 /**
- * A simple model of a weasel.
- * Weasels age, move, breed, and die.
- * 
- * @author Tycho Marinus, Cor Sloot, Mark Visscher, Luuk Blom
- * @version 27-01-2010
+ *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ * @version 2012.11.13
  */
+
 public class Weasel extends Animal 
 {
     //The age at which a weasel can eat a young fox

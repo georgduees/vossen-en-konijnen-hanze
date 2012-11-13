@@ -6,10 +6,10 @@ import view.Field;
 import view.Location;
 
 /**
- * A class representing shared characteristics of animals.
- * 
- * @author Tycho Marinus, Cor Sloot, Mark Visscher, Luuk Blom
+ *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ * @version 2012.11.13
  */
+
 public abstract class Animal implements Actor
 {
     // Whether the animal is alive or not.

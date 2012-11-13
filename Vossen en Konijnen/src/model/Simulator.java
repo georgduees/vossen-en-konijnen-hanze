@@ -18,11 +18,10 @@ import view.SimulatorView;
 
 
 /**
- * A simple predator-prey simulator, based on a rectangular field
- * containing rabbits and foxes.
- * 
- * @author @author Tycho Marinus, Cor Sloot, Mark Visscher, Luuk Blom
+ *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ * @version 2012.11.13
  */
+
 public class Simulator implements Runnable 
 {
     //The probability that a weasel will be created in any given grid position.

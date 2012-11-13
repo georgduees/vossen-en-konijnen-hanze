@@ -5,10 +5,10 @@ import java.applet.*;
 import java.net.*;
 
 /**
- * Class that gets a sound file and enables it to play or stop the audio.
- * @author Tycho Marinus, Cor Sloot, Mark Visscher, Luuk Blom
- *
+ *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ * @version 2012.11.13
  */
+
 public class Sound
 {
   private AudioClip song; // Sound player

@@ -2,11 +2,10 @@ package model;
 
 import java.util.*;
 /**
- * Class that keeps track of all the numbers, each step all the counters are updated. 
- * This is a static class that allows all other objects to increase the counters.
- * @author Tycho Marinus, Cor Sloot, Mark Visscher, Luuk Blom
- *
+ *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ * @version 2012.11.13
  */
+
 public final class Numbers {
 
 	private static int rabbits;

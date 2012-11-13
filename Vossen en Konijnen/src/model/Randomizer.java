@@ -2,11 +2,10 @@ package model;
 import java.util.Random;
 
 /**
- * Provide control over the randomization of the simulation.
- * 
- * @author David J. Barnes and Michael Kolling
- * @version 2008.03.30
+ *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ * @version 2012.11.13
  */
+
 public class Randomizer
 {
     // The default seed for control of randomization.

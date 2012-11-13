@@ -13,8 +13,8 @@ import model.Randomizer;
  * Represent a rectangular grid of field positions.
  * Each position is able to store a single animal.
  * 
- * @author David J. Barnes and Michael Kolling
- * @version 2008.03.30
+ * @author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ * @version 2012.11.13
  */
 public class Field
 {

@@ -20,8 +20,8 @@ import javax.swing.JTextField;
 /**
  * Class with the main method, the only thing this does is be able to correctly start 
  * the vossen en konijnen project.
- * @author Mark Visscher, Cor Sloot, Tycho Marinus, Luuk Blom.
- *
+ * @author Bastiaan Vreijsen, Christian Hilbrands, Georg Duees
+ * @version 2012.11.13
  */
 public class StartVossenKonijnen extends KeyAdapter
 {

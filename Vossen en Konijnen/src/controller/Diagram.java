@@ -1,7 +1,7 @@
 package controller;
 /**
  *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
- * @version 2012.11.13
+ *@version 2012.11.13
  */
 
 // all the imports

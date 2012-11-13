@@ -10,11 +10,8 @@ import java.awt.event.*;
 import view.SimulatorView;
 
 /**
- * Class that makes the entire gui. In this gui are all the buttons 
- * and the field view are shown
- * 
- * @author Tycho Marinus, Cor Sloot, Mark Visscher, Luuk Blom
- *
+ *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ *@version 2012.11.13
  */
 public class HeadFrame extends JFrame
 {

@@ -12,10 +12,8 @@ import model.AnimalNumbers;
 
 
 /**
- * This class is used to implement the settings that you can use to
- * change the food values that animals have.
- * 
- * @author Tycho Marinus, Cor Sloot, Mark Visscher, Luuk Blom
+ *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ *@version 2012.11.13
  */
 public class FoodValuePanel extends JPanel
 {

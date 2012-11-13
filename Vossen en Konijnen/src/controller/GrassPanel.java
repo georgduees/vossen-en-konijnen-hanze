@@ -12,7 +12,7 @@ import model.AnimalNumbers;
 
 
 /**
- *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ *@author Bastiaan Vreijsen, Christian Hilbrands, Georg Duees
  *@version 2012.11.13
  */
 public class GrassPanel extends JPanel

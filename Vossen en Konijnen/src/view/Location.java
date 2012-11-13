@@ -1,20 +1,20 @@
 package view;
 /**
- * Represent a location in a rectangular grid.
+ * Representeerd een locatiein een rechthoekig raster.
  * 
  * @author Bastiaan Vreijsen, Christian Hilbrands, Georg Duees
  * @version 2012.11.13
  */
 public class Location
 {
-    // Row and column positions.
+    // rij en colum posities.
     private int row;
     private int col;
 
     /**
-     * Represent a row and column.
-     * @param row The row.
-     * @param col The column.
+     * Representeerd een rij en colum.
+     * @param row rij.
+     * @param col colum.
      */
     public Location(int row, int col)
     {
@@ -23,7 +23,7 @@ public class Location
     }
     
     /**
-     * Implement content equality.
+     * Implementeerd inhoud equals() methode.
      */
     public boolean equals(Object obj)
     {
@@ -37,8 +37,8 @@ public class Location
     }
     
     /**
-     * Return a string of the form row,column
-     * @return A string representation of the location.
+     * Returnt een String in de form rij,colum.
+     * @return een String met de locatie.
      */
     public String toString()
     {
@@ -46,10 +46,10 @@ public class Location
     }
     
     /**
-     * Use the top 16 bits for the row value and the bottom for
-     * the column. Except for very big grids, this should give a
-     * unique hash code for each (row, col) pair.
-     * @return A hashcode for the location.
+     * gebruik de top 16 bits voor de rij waardes en de onderste voor
+     * de colum. behalve voor (erg) grote rasters, dit zou een
+     * unieke hash code genereren voor elke rij,colum koppel
+     * @return een hashcode voor de locatie.
      */
     public int hashCode()
     {
@@ -57,7 +57,7 @@ public class Location
     }
     
     /**
-     * @return The row.
+     * @return de rij.
      */
     public int getRow()
     {
@@ -65,7 +65,7 @@ public class Location
     }
     
     /**
-     * @return The column.
+     * @return de colum.
      */
     public int getCol()
     {

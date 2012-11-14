@@ -11,31 +11,20 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.CategoryDataset;
-//import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DatasetUtilities;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 import java.awt.BorderLayout;
 import java.awt.Container;
-//import java.awt.GraphicsEnvironment;
 import java.awt.GridLayout;
-//import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-//import java.awt.event.ItemEvent;
-//import java.awt.event.ItemListener;
-//import javax.swing.JButton;
-//import javax.swing.JCheckBox;
-//import javax.swing.JDialog;
 import javax.swing.JFrame;
-//import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-//import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-//import javax.swing.JTextField;
 
 public class Diagram 
 {	
@@ -69,7 +58,6 @@ public class Diagram
 	private JFreeChart chart2;
 	private JFreeChart chart3;
 	private JFreeChart chart4;
-	//private JFreeChart chart5;
 	
 	//  Initialization of the data collections 
 	 
@@ -79,34 +67,15 @@ public class Diagram
 	private CategoryDataset datasetReasonDeaths;
 	private double[][] deathsArray;
 	private String[] stepArray;
-	//private DefaultCategoryDataset averageDataset;
 	
 	// Initialization of all the chartpanels
 	private ChartPanel deathsChartPanel;
 	private ChartPanel aliveChartPanel;
 	private ChartPanel percentageChartPanel;
 	private ChartPanel deathReasonChart;
-	//private ChartPanel avereageChartPanel;
 	private JPanel chartPanel;
-	//private JPanel settingsPanel;
-	
-	
-    // Initialaztion of booleans for showing charts
-	//private boolean chartAlive = true;
-	//private boolean chartDeaths = true;
-	// boolean chartPercentage = false;
 	private boolean chartReason = false;
-	//private boolean chartAverage = false;
-	// Settings Strings
-    //private final String rabbitString = "Rabbits";
-   // private final String foxesString = "Foxes";
-   // private final String weaselsString = "Weasels";
-   // private final String totalString = "Total animals";
-    //private String stepsString;
 
-    // Settings checkboxes
-   // private JCheckBox reasonCheck;
-   // private JCheckBox averageCheck;
 	/**
 	 * The constructor for diagram. It only calls the makeFrame method that makes
 	 * the chart frame.
@@ -133,13 +102,6 @@ public class Diagram
 		contentPane.setLayout(new BorderLayout());
 
 		chartPanel = makeChartPanel();
-		//settingsPanel = makeSettingsPanel();
-		      
-	    //contentPane.add(percentageChartPanel);
-        //contentPane.add(aliveChartPanel);
-		//contentPane.add(deathsChartPanel);
-		
-		//contentPane.add(settingsPanel, BorderLayout.WEST);
 		contentPane.add(chartPanel, BorderLayout.CENTER);
 
 	
@@ -257,119 +219,7 @@ public class Diagram
 
 	}
 	
-	/**
-	 * Method to make the average chart .
-	 * Begin and end steps need to be given. It makes a chart of the averages
-	 * between those steps. 
-	 * @param int beginstep int endsteps
-	 */
-	/*
-	private void makeAverageChart(int begin, int end)
-	{
-		if (begin >= end && begin < 0 && end > Numbers.getSteps()){
-			JOptionPane.showMessageDialog(frame, "First number should be smaller then second, \n " +
-					"First number cannot be smaller then 0, second number cannot be higher then steps taken.");
-		}
-		averageDataset = new DefaultCategoryDataset();
-        stepsString = "Average between " + Integer.toString(begin) + " and " + Integer.toString(end);
-        averageDataset.addValue(getRabbitAverage(begin, end), rabbitString, stepsString + " steps");
-        averageDataset.addValue(getFoxAverage(begin, end), foxesString, stepsString + " steps");
-        averageDataset.addValue(getWeaselAverage(begin, end), weaselsString, stepsString + " steps");
-        averageDataset.addValue(getTotalAverage(begin, end), totalString, stepsString + " steps");
 
-
-
-		
-        chart5 = ChartFactory.createBarChart(
-                "Average animals",         // chart title
-                "Animals",               // domain axis label
-                "Avereage",                  // range axis label
-                averageDataset,                  // data
-                PlotOrientation.VERTICAL, // orientation
-                true,                     // include legend
-                true,                     // tooltips?
-                false                     // URLs?
-            );
-        avereageChartPanel = new ChartPanel(chart5);
-        
-		chartPanel.add(avereageChartPanel);
-		chartPanel.validate();
-		frame.repaint();
-
-	}
-	*/
-	/**
-	 * Method to get average of rabbit between begin and end
-	 * @param begin
-	 * @param end
-	 */
-	/*
-	private double getRabbitAverage(int start, int end)
-	{
-		double total = 0;
-		int intstart = start;
-		double[][] temp = seriesRabbitsAlive.toArray();
-		while (start <= end){
-			total += temp[1][start];
-			start++;
-		}
-		return total / (end - intstart);
-	}
-	*/
-	/**
-	 * Method to get average of fox between begin and end
-	 * @param begin
-	 * @param end
-	 */
-	/*
-	private double getFoxAverage(int start, int end)
-	{
-		double total = 0;
-		int intstart = start;
-		double[][] temp = seriesFoxesAlive.toArray();
-		while (start <= end){
-			total += temp[1][start];
-			start++;
-		}
-		return total / (end - intstart);
-	}
-	*/
-	/**
-	 * Method to get average of weasels between begin and end
-	 * @param begin
-	 * @param end
-	 */
-	/*
-	private double getWeaselAverage(int start, int end)
-	{
-		double total = 0;
-		int intstart = start;
-		double[][] temp = seriesWeaselsAlive.toArray();
-		while (start <= end){
-			total += temp[1][start];
-			start++;
-		}
-		return total / (end - intstart);
-	}
-	*/
-	/**
-	 * Method to get average of total animals between begin and end
-	 * @param begin
-	 * @param end
-	 */
-	/*
-	private double getTotalAverage(int start, int end)
-	{
-		double total = 0;
-		int intstart = start;
-		double[][] temp = seriesTotalAlive.toArray();
-		while (start <= end){
-			total += temp[1][start];
-			start++;
-		}
-		return total / (end - intstart);
-	}
-	*/
 	/**
 	 * Method to make the chart panel, it returns the JPanel.
 	 * It checks the booleans of charts to see if it should include that chart
@@ -380,249 +230,14 @@ public class Diagram
 	private JPanel makeChartPanel()
 	{
 		JPanel chartPanel = new JPanel(new GridLayout(0, 2));
-		//if (chartAlive){
 			chartPanel.add(aliveChartPanel);
-		//}
-		//if (chartDeaths){
 			chartPanel.add(deathsChartPanel);
-		//}
-		//if (chartPercentage){
 			chartPanel.add(percentageChartPanel);
-		//}
-		//if (chartAverage){
-			//chartPanel.add(avereageChartPanel);
-	//	}
-		//if (chartReason){
 			makeReasonChart();
 			chartPanel.add(deathsChartPanel);
-		//}
-		
 		return chartPanel;
 	}
-	/**
-	 * Method to make the settings Panel
-	 * @return JPanel
-	 */
-	/*private JPanel makeSettingsPanel()
-	{
-		JPanel settingsPanel = new JPanel();
-		settingsPanel.setLayout(new GridLayout(8, 0));
-		
-		JButton averageButton = new JButton("Select steps for average chart");
-		averageButton.addActionListener(new ActionListener() { public void actionPerformed(ActionEvent arg0) { averageButton(); }
-		});
-		
-		JCheckBox aliveCheck = new JCheckBox("Show alive chart", chartAlive);
-		aliveCheck.addItemListener(new ItemListener() { public void itemStateChanged(ItemEvent e) { setAliveChart(); }});
-		JCheckBox deathsCheck = new JCheckBox("Show deaths chart", chartDeaths);
-		deathsCheck.addItemListener(new ItemListener() { public void itemStateChanged(ItemEvent e) { setDeathsChart(); }});
-		JCheckBox percentageCheck = new JCheckBox("Show percentage chart", chartPercentage);
-		percentageCheck.addItemListener(new ItemListener() { public void itemStateChanged(ItemEvent e) { setPercentageChart(); }});
-		averageCheck = new JCheckBox("Show average chart", chartAverage);
-		averageCheck.addItemListener(new ItemListener() { public void itemStateChanged(ItemEvent e) { setAverageChart(); }});
-		reasonCheck = new JCheckBox("Show death reason chart", chartReason);
-		reasonCheck.addItemListener(new ItemListener() { public void itemStateChanged(ItemEvent e) { setReasonChart(); }});
-		
-	
-		settingsPanel.add(averageButton);
-		settingsPanel.add(aliveCheck);
-		settingsPanel.add(deathsCheck);
-		settingsPanel.add(percentageCheck);
-		settingsPanel.add(averageCheck);
-		settingsPanel.add(reasonCheck);
 
-		
-
-		
-		return settingsPanel;
-	}
-	*/
-	/**
-	 * Method to be called when averagebutton is pressed, this allows the 
-	 * user to choose begin and end steps for average chart.
-	 */
-	/*private void averageButton()
-	{
-		JLabel firstText = new JLabel("First step: ");
-		final JTextField beginField = new JTextField();
-		JLabel endText = new JLabel("Last step: ");
-		final JTextField endField = new JTextField(); 
-
-		JPanel popup = new JPanel();
-		popup.setLayout(new GridLayout(2, 2));
-		popup.add(firstText);
-		popup.add(beginField);
-		popup.add(endText);
-		popup.add(endField);
-		JPanel pop = new JPanel(new BorderLayout());
-		pop.add(popup, BorderLayout.NORTH);
-		JButton ok = new JButton("Ok");
-		pop.add(ok, BorderLayout.SOUTH);
-        
-		GraphicsEnvironment ge = GraphicsEnvironment.getLocalGraphicsEnvironment();
-        Point center = ge.getCenterPoint();
-		
-		final JDialog dialog = new JDialog(frame, "Give values for average chart.");
-		dialog.add(pop);
-		dialog.setLocation(center);
-		dialog.setSize(300, 110);
-		dialog.setVisible(true);
-		ok.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				try {
-					makeAverageChart(Integer.parseInt(beginField.getText()), Integer.parseInt(endField.getText()));
-					dialog.dispose();
-
-					} 
-					catch (Exception ee) {
-						JOptionPane.showMessageDialog(frame, "First and last should be numbers. \n" +
-								"The first step should be lower then the last step and both shoudn't be out \n" +
-								"of range with the amount of steps the simulator has taken.");
-					}
-				
-			}
-		});
-
-
-	}
-	*/
-	/**
-	 * Method to enable or disable showing the alive chart.
-	 */
-	/*private void setAliveChart()
-	{
-		if (chartAlive){
-
-			chartPanel.remove(aliveChartPanel);
-			chartAlive = false;
-			chartPanel.validate();
-			frame.repaint();
-		}
-		
-		else {
-			if (chartPanel.getComponentCount() > 4){
-				JOptionPane.showMessageDialog(frame, "Not able to show more then 4 charts, deselect one first.");
-			}
-			else {
-				chartPanel.add(aliveChartPanel);
-				chartPanel.validate();
-				chartAlive = true;
-				frame.repaint();
-			}
-		}
-	}
-	*/
-	/**
-	 * Method to enable or disable showing the alive chart.
-	 */
-	/*private void setReasonChart()
-	{
-		if (chartReason && deathReasonChart != null){
-			chartPanel.remove(deathReasonChart);
-			chartReason = false;
-			chartPanel.validate();
-			frame.repaint();
-		}
-		
-		else if (deathReasonChart != null){
-			if (chartPanel.getComponentCount() > 4){
-				JOptionPane.showMessageDialog(frame, "Not able to show more then 4 charts, deselect one first.");
-			}
-			else {
-				chartPanel.add(deathReasonChart);
-				chartPanel.validate();
-				chartReason = true;
-				frame.repaint();
-			}
-		}
-		else {
-			if (reasonCheck.getSelectedObjects() != null){
-			JOptionPane.showMessageDialog(frame, "Cannot show Reason chart untill atleast 50 steps are taken.");
-			}
-			reasonCheck.setSelected(false);
-
-		}
-	}
-	*/
-	/**
-	 * Method to enable or disable showing the alive chart.
-	 */
-	/*private void setAverageChart()
-	{
-		if (chartAverage){
-			chartPanel.remove(avereageChartPanel);
-			chartAverage = false;
-			chartPanel.validate();
-			frame.repaint();
-		}
-		else {
-
-			if (avereageChartPanel != null){
-				chartPanel.add(avereageChartPanel);
-				chartPanel.validate();
-				chartAverage = true;
-				frame.repaint();
-			}
-			else {
-				if (averageCheck.getSelectedObjects() != null){
-					JOptionPane.showMessageDialog(frame, "Cannot show average chart untill average chart is created.");
-				}
-				averageCheck.setSelected(false);
-			}
-			
-		}
-	}
-	*/
-	/**
-	 * Method to enable or disable showing the deaths chart.
-	 */
-	/*
-	private void setDeathsChart()
-	{
-		if (chartDeaths){
-			chartPanel.remove(deathsChartPanel);
-			chartDeaths = false;
-			chartPanel.validate();
-			frame.repaint();
-		}
-		else {
-			if (chartPanel.getComponentCount() > 4){
-				JOptionPane.showMessageDialog(frame, "Not able to show more then 4 charts, deselect one first.");
-			}
-			else {
-				chartPanel.add(deathsChartPanel);
-				chartPanel.validate();
-				chartDeaths = true;
-				frame.repaint();
-			}
-		}
-	}
-*/
-	/**
-	 * Method to enable or disable showing the deaths chart.
-	 */
-	/*
-	private void setPercentageChart()
-	{
-		if (chartPercentage){
-			chartPanel.remove(percentageChartPanel);
-			chartPercentage = false;
-			chartPanel.validate();
-			frame.repaint();
-		}
-		else {
-			if (chartPanel.getComponentCount() > 4){
-				JOptionPane.showMessageDialog(frame, "Not able to show more then 4 charts, deselect one first.");
-			}
-			else {
-				chartPanel.add(percentageChartPanel);
-				chartPanel.validate();
-				chartPercentage = true;
-				frame.repaint();
-			}
-		}
-	}
-	*/
 	/**
 	 * Method to add one step to all the series. This automatically also 
 	 * updates the diagrams

@@ -11,7 +11,7 @@ import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.CategoryDataset;
-import org.jfree.data.category.DefaultCategoryDataset;
+//import org.jfree.data.category.DefaultCategoryDataset;
 import org.jfree.data.general.DatasetUtilities;
 import org.jfree.data.general.DefaultPieDataset;
 import org.jfree.data.xy.XYSeries;
@@ -26,14 +26,14 @@ import java.awt.event.ActionListener;
 //import java.awt.event.ItemEvent;
 //import java.awt.event.ItemListener;
 //import javax.swing.JButton;
-import javax.swing.JCheckBox;
+//import javax.swing.JCheckBox;
 //import javax.swing.JDialog;
 import javax.swing.JFrame;
 //import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
+//import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 //import javax.swing.JTextField;
 
@@ -69,7 +69,7 @@ public class Diagram
 	private JFreeChart chart2;
 	private JFreeChart chart3;
 	private JFreeChart chart4;
-	private JFreeChart chart5;
+	//private JFreeChart chart5;
 	
 	//  Initialization of the data collections 
 	 
@@ -79,34 +79,34 @@ public class Diagram
 	private CategoryDataset datasetReasonDeaths;
 	private double[][] deathsArray;
 	private String[] stepArray;
-	private DefaultCategoryDataset averageDataset;
+	//private DefaultCategoryDataset averageDataset;
 	
 	// Initialization of all the chartpanels
 	private ChartPanel deathsChartPanel;
 	private ChartPanel aliveChartPanel;
 	private ChartPanel percentageChartPanel;
 	private ChartPanel deathReasonChart;
-	private ChartPanel avereageChartPanel;
+	//private ChartPanel avereageChartPanel;
 	private JPanel chartPanel;
-	private JPanel settingsPanel;
+	//private JPanel settingsPanel;
 	
 	
     // Initialaztion of booleans for showing charts
-	private boolean chartAlive = true;
-	private boolean chartDeaths = true;
-	private boolean chartPercentage = false;
+	//private boolean chartAlive = true;
+	//private boolean chartDeaths = true;
+	// boolean chartPercentage = false;
 	private boolean chartReason = false;
-	private boolean chartAverage = false;
+	//private boolean chartAverage = false;
 	// Settings Strings
-    private final String rabbitString = "Rabbits";
-    private final String foxesString = "Foxes";
-    private final String weaselsString = "Weasels";
-    private final String totalString = "Total animals";
-    private String stepsString;
+    //private final String rabbitString = "Rabbits";
+   // private final String foxesString = "Foxes";
+   // private final String weaselsString = "Weasels";
+   // private final String totalString = "Total animals";
+    //private String stepsString;
 
     // Settings checkboxes
-    private JCheckBox reasonCheck;
-    private JCheckBox averageCheck;
+   // private JCheckBox reasonCheck;
+   // private JCheckBox averageCheck;
 	/**
 	 * The constructor for diagram. It only calls the makeFrame method that makes
 	 * the chart frame.
@@ -263,6 +263,7 @@ public class Diagram
 	 * between those steps. 
 	 * @param int beginstep int endsteps
 	 */
+	/*
 	private void makeAverageChart(int begin, int end)
 	{
 		if (begin >= end && begin < 0 && end > Numbers.getSteps()){
@@ -296,12 +297,13 @@ public class Diagram
 		frame.repaint();
 
 	}
-	
+	*/
 	/**
 	 * Method to get average of rabbit between begin and end
 	 * @param begin
 	 * @param end
 	 */
+	/*
 	private double getRabbitAverage(int start, int end)
 	{
 		double total = 0;
@@ -313,11 +315,13 @@ public class Diagram
 		}
 		return total / (end - intstart);
 	}
+	*/
 	/**
 	 * Method to get average of fox between begin and end
 	 * @param begin
 	 * @param end
 	 */
+	/*
 	private double getFoxAverage(int start, int end)
 	{
 		double total = 0;
@@ -329,11 +333,13 @@ public class Diagram
 		}
 		return total / (end - intstart);
 	}
+	*/
 	/**
 	 * Method to get average of weasels between begin and end
 	 * @param begin
 	 * @param end
 	 */
+	/*
 	private double getWeaselAverage(int start, int end)
 	{
 		double total = 0;
@@ -345,11 +351,13 @@ public class Diagram
 		}
 		return total / (end - intstart);
 	}
+	*/
 	/**
 	 * Method to get average of total animals between begin and end
 	 * @param begin
 	 * @param end
 	 */
+	/*
 	private double getTotalAverage(int start, int end)
 	{
 		double total = 0;
@@ -361,7 +369,7 @@ public class Diagram
 		}
 		return total / (end - intstart);
 	}
-	
+	*/
 	/**
 	 * Method to make the chart panel, it returns the JPanel.
 	 * It checks the booleans of charts to see if it should include that chart

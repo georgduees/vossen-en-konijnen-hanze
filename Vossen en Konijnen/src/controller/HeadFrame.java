@@ -287,7 +287,6 @@ JLabel fox = new JLabel("Fox");
 	 */
 	public void about()
 	{
-		about.playSoundOnce();
 		JOptionPane.showMessageDialog(this, "Simulatie Vossen en Konijnen. \n\ngemaakt door:\n \nBastiaan Vreijsen\n Christian Hilbrands\n Georg Duees");
 	}
 	
@@ -305,16 +304,12 @@ JLabel fox = new JLabel("Fox");
 	 */
 	public void freeSteps()
 	{
-		if(!AnimalNumbers.getMute()){
-    	button.playSoundOnce();
-		}
+		
 		String str = JOptionPane.showInputDialog("Give amount of steps.");
 		try {
 			sim.simulate(Integer.parseInt(str));
 		} catch (Exception e) {
-			if(!AnimalNumbers.getMute()){
-	    	error.playSoundOnce();
-			}
+			
 			JOptionPane.showMessageDialog(this, "Steps should be a number.");
 		}
 	}
@@ -324,9 +319,7 @@ JLabel fox = new JLabel("Fox");
 	 */
 	public void oneStep()
 	{
-		if(!AnimalNumbers.getMute()){
-	    	button.playSoundOnce();
-			}
+		
 		sim.simulate(1);
 	}
 	
@@ -335,9 +328,7 @@ JLabel fox = new JLabel("Fox");
 	 */
 	public void hundredStep()
 	{
-		if(!AnimalNumbers.getMute()){
-	    	button.playSoundOnce();
-			}
+		
 		sim.simulate(100);
 	}
 	
@@ -346,33 +337,21 @@ JLabel fox = new JLabel("Fox");
 	 */
 	public void startPause()
 	{
-		if(AnimalNumbers.getMute()){
-	    	button.playSoundOnce();
-			}
+		
 		sim.startPause();
 	}
 	
 	/**
 	 * Method to mute the simulator
 	 */
-	public void mute()
-	{
-		if(AnimalNumbers.getMute() == false){
-			AnimalNumbers.setMute(true);
-		}
-		else{
-			AnimalNumbers.setMute(false);
-		}
-	}
+	
 	
 	/**
 	 * Method to reset the entire simulator
 	 */
 	public void reset()
 	{
-		if(!AnimalNumbers.getMute()){
-	    	button.playSoundOnce();
-			}
+		
 		sim.reset();
 	}
 	
@@ -381,9 +360,7 @@ JLabel fox = new JLabel("Fox");
 	 */
 	public void diagram()
 	{
-		if(!AnimalNumbers.getMute()){
-	    	button.playSoundOnce();
-			}
+		
 		this.diagram.getFrame().setVisible(true);
 
 	}
@@ -403,18 +380,14 @@ JLabel fox = new JLabel("Fox");
 	 */
 	public void runSpeed(JButton speed)
 	{
-		if(!AnimalNumbers.getMute()){
-	    	button.playSoundOnce();
-			}
+		
 		String str = JOptionPane.showInputDialog("Give new runspeed.");
 		try {
-			if(!AnimalNumbers.getMute()){
-		    	button.playSoundOnce();
-				}
+			
 			sim.setRunSpeed(Integer.parseInt(str));
 			speed.setText("Speed: \n" + sim.getRunSpeed());
 		} catch (Exception e) {
-	    	error.playSoundOnce();
+	    	
 			JOptionPane.showMessageDialog(this, "Speed has to be a number.");
 		}
 	}
@@ -433,9 +406,7 @@ JLabel fox = new JLabel("Fox");
 	 */
 	public void keepGoing()
 	{
-		if(!AnimalNumbers.getMute()){
-	    	button.playSoundOnce();
-			}
+		
 		sim.keepGoing();
 	}
 	
@@ -444,9 +415,7 @@ JLabel fox = new JLabel("Fox");
 	 */
 	private void quit()
 	{
-		if(!AnimalNumbers.getMute()){
-	    	button.playSoundOnce();
-			}
+		
 		System.exit(0);
 	}
 	

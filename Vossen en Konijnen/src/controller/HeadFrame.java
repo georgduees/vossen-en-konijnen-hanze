@@ -3,6 +3,8 @@ package controller;
 import java.awt.*;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import model.*;
 
@@ -25,6 +27,10 @@ public class HeadFrame extends JFrame
 	private static Simulator sim;
 	private SimulatorView view;
 	private Diagram diagram; 
+	private JPanel center;
+	private JTabbedPane tabbedPanel;
+	private JComponent simulatorContainer;
+	private int previousI=0;
 
 	/**
 	 * Contructor it gets a view and a simulator sets them for this headframe,
@@ -33,7 +39,7 @@ public class HeadFrame extends JFrame
 	 * @param sim
 	 */
 	public HeadFrame(SimulatorView view, Simulator sim)
-	{
+	{ 
 		this.diagram = new Diagram();
 		this.sim = sim;
 		this.view = view;
@@ -46,23 +52,26 @@ public class HeadFrame extends JFrame
 	 * fieldview, legenda and button panel to it. 
 	 */
 	private void makeFrame()
-	{
+	{this.simulatorContainer = new JPanel();
+	this.simulatorContainer.setLayout(new BorderLayout());
+	
 		frame = new JFrame("Foxes and Rabbits simulation");
 		Dimension dim = new Dimension(400, 300);
 		frame.setMinimumSize(dim);
 		makeMenuBar(frame);
-		
-		
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container contentPane = frame.getContentPane();
 		
+		
 		contentPane.setLayout(new BorderLayout());
-		contentPane.add(view.getViewPanel(), BorderLayout.CENTER);
+		center = makeCenter();
+		contentPane.add(center, BorderLayout.CENTER);
+		simulatorContainer.add(view.getViewPanel(), BorderLayout.CENTER);
 		
 		JPanel westPanel = makeWestPanel();
 		JPanel eastPanel = makeEastPanel();
-		contentPane.add(westPanel, BorderLayout.WEST);
-		contentPane.add(eastPanel, BorderLayout.EAST);
+		simulatorContainer.add(westPanel, BorderLayout.WEST);
+		simulatorContainer.add(eastPanel, BorderLayout.EAST);
 		 try {
 	            // Set System L&F
 	        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
@@ -85,7 +94,29 @@ public class HeadFrame extends JFrame
 		frame.setVisible(true);
 		
 	}
+	/*
+	 * Methode that creates the Tabmenu in the MainFrame
+	 */
+	private JPanel makeCenter()
+	{
+		JPanel centerPanel = new JPanel();
+		tabbedPanel = new JTabbedPane();
+
 	
+		//tabbedPanel.insertTab("Simulator", null, simulatorContainer, "Simulator",0);
+		
+		
+		tabbedPanel.insertTab("Simulator", null,simulatorContainer, "SimulatorView",0);
+		JComponent SettingsPanel = new JPanel();
+		tabbedPanel.insertTab("Settings", null,SettingsPanel, "Settings",1);
+		
+		tabbedPanel.addChangeListener(new ChangeListener(){
+			public void stateChanged(ChangeEvent e){changeOfTab(e);}
+		});
+		
+		centerPanel.add(tabbedPanel);
+		return centerPanel;
+	}
 	/**
 	 * Method that creates the west panel of the simulator.
 	 * @return the compiled JPanel
@@ -155,10 +186,10 @@ fox.setForeground(Color.blue);
 			public void actionPerformed(ActionEvent e) {reset(); }
 		});
 		
-		JButton diagram = new JButton("Diagram");
+	/*JButton diagram = new JButton("Diagram");
 		diagram.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {diagram(); }
-		});
+		});*/
 		
 		final JButton speed = new JButton("Speed: \n" + sim.getRunSpeed());
 		speed.addActionListener(new ActionListener() {
@@ -182,7 +213,7 @@ fox.setForeground(Color.blue);
 		westPanel.add(hundredStep);
 		westPanel.add(startPause);
 		westPanel.add(reset);
-		westPanel.add(diagram);
+	//	westPanel.add(diagram);
 		westPanel.add(keepGoing);
 		westPanel.add(freeSteps);
 
@@ -221,11 +252,11 @@ fox.setForeground(Color.blue);
         	public void actionPerformed(ActionEvent e) { freeSteps(); }
         });
         
-        JMenuItem mute = new JMenuItem("Mute / Unmute");
+       /* JMenuItem mute = new JMenuItem("Mute / Unmute");
         mute.setAccelerator(KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_D, java.awt.Event.CTRL_MASK));
         mute.addActionListener(new ActionListener() {
         	public void actionPerformed(ActionEvent e) { mute(); }
-        });
+        });*/
         
         JMenuItem reset = new JMenuItem("Reset");
         reset.setAccelerator(KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.Event.CTRL_MASK));
@@ -233,11 +264,12 @@ fox.setForeground(Color.blue);
         	public void actionPerformed(ActionEvent e) { reset(); }
         });
         
-        JMenuItem diagram = new JMenuItem("Diagram");
+      /*  JMenuItem diagram = new JMenuItem("Diagram");
         diagram.setAccelerator(KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.Event.CTRL_MASK));
         diagram.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) { diagram(); }
+        	public void actionPerformed(ActionEvent e) { diagram();}
         });
+       */
         
         JMenuItem startPause = new JMenuItem("Start / Pauze");
         startPause.setAccelerator(KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_X, java.awt.Event.CTRL_MASK));
@@ -251,7 +283,7 @@ fox.setForeground(Color.blue);
         fileMenu.add(start);
         fileMenu.addSeparator();
         fileMenu.add(steps);
-        fileMenu.add(diagram);
+        //fileMenu.add(diagram);
         fileMenu.add(reset);
         fileMenu.add(startPause);
         fileMenu.addSeparator();
@@ -365,12 +397,12 @@ fox.setForeground(Color.blue);
 	/**
 	 * Method to open the diagram frame
 	 */
-	public void diagram()
+	/*public void diagram()
 	{
 		
 		this.diagram.getFrame().setVisible(true);
 
-	}
+	}*/
 	
 	/**
 	 * Getter for the simulator variable
@@ -432,5 +464,33 @@ fox.setForeground(Color.blue);
 	private void settings()
 	{
 		new Settings();
+	}
+	public void changeOfTab(ChangeEvent e)
+	{
+		
+		JTabbedPane source = (JTabbedPane)e.getSource();
+			int i = (int)source.getSelectedIndex();
+			tabbedPanel.setIconAt(previousI, null);
+	   		if(tabbedPanel.isEnabledAt(i) == true){
+	   			switch(i){
+	   			case 0: 
+	    			break;
+	    		case 1:
+	    			break;
+	    		case 2:
+	    			break;
+	    		case 3:
+	    			break;
+	    		case 4: 
+	    			break;
+	    		case 5: 
+	    			break;
+	    		case 6:
+	    			break;
+	    		case 7:
+	    			break;
+	    		}
+	    	}
+	   		previousI = i;
 	}
 }

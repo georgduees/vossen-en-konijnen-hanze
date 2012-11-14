@@ -25,7 +25,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
-import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JDialog;
@@ -134,13 +133,13 @@ public class Diagram
 		contentPane.setLayout(new BorderLayout());
 
 		chartPanel = makeChartPanel();
-		settingsPanel = makeSettingsPanel();
+		//settingsPanel = makeSettingsPanel();
 		      
 	    //contentPane.add(percentageChartPanel);
         //contentPane.add(aliveChartPanel);
 		//contentPane.add(deathsChartPanel);
 		
-		contentPane.add(settingsPanel, BorderLayout.WEST);
+		//contentPane.add(settingsPanel, BorderLayout.WEST);
 		contentPane.add(chartPanel, BorderLayout.CENTER);
 
 	
@@ -373,22 +372,22 @@ public class Diagram
 	private JPanel makeChartPanel()
 	{
 		JPanel chartPanel = new JPanel(new GridLayout(0, 2));
-		if (chartAlive){
+		//if (chartAlive){
 			chartPanel.add(aliveChartPanel);
-		}
-		if (chartDeaths){
+		//}
+		//if (chartDeaths){
 			chartPanel.add(deathsChartPanel);
-		}
-		if (chartPercentage){
+		//}
+		//if (chartPercentage){
 			chartPanel.add(percentageChartPanel);
-		}
-		if (chartAverage){
-			chartPanel.add(avereageChartPanel);
-		}
-		if (chartReason){
+		//}
+		//if (chartAverage){
+			//chartPanel.add(avereageChartPanel);
+	//	}
+		//if (chartReason){
 			makeReasonChart();
 			chartPanel.add(deathsChartPanel);
-		}
+		//}
 		
 		return chartPanel;
 	}
@@ -396,7 +395,7 @@ public class Diagram
 	 * Method to make the settings Panel
 	 * @return JPanel
 	 */
-	private JPanel makeSettingsPanel()
+	/*private JPanel makeSettingsPanel()
 	{
 		JPanel settingsPanel = new JPanel();
 		settingsPanel.setLayout(new GridLayout(8, 0));
@@ -429,12 +428,12 @@ public class Diagram
 		
 		return settingsPanel;
 	}
-	
+	*/
 	/**
 	 * Method to be called when averagebutton is pressed, this allows the 
 	 * user to choose begin and end steps for average chart.
 	 */
-	private void averageButton()
+	/*private void averageButton()
 	{
 		JLabel firstText = new JLabel("First step: ");
 		final JTextField beginField = new JTextField();
@@ -478,11 +477,11 @@ public class Diagram
 
 
 	}
-	
+	*/
 	/**
 	 * Method to enable or disable showing the alive chart.
 	 */
-	private void setAliveChart()
+	/*private void setAliveChart()
 	{
 		if (chartAlive){
 
@@ -504,6 +503,7 @@ public class Diagram
 			}
 		}
 	}
+	*/
 	/**
 	 * Method to enable or disable showing the alive chart.
 	 */

@@ -1,11 +1,12 @@
 package controller;
 /**
- *@author Bastiaan Vreijsen, Christian Hilbrands, Georg Duees
- *@version 2012.11.13
+ *@author Bastiaan Vreijsen, Christiaan Hilbrands, Georg Duees
+ * @version 2012.11.13
  */
 
 // all the imports
 import model.Numbers;
+import model.WriteToFile;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
@@ -945,4 +946,3 @@ public class Diagram
 		}
 	}
 }
-

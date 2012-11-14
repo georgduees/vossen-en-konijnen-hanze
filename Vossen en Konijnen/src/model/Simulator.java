@@ -166,13 +166,13 @@ public class Simulator implements Runnable
         		step();
         		step++;
         	}
-        	music.stopSound();
+        	
         }
         else if (keepGoing){
         	while (keepGoing && go && view.isViable(field) && thread == thisThread) {
         		step();
         	}
-        	music.stopSound();
+        	
         }
     }
     

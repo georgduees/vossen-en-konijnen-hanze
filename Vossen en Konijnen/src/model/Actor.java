@@ -13,27 +13,26 @@ import view.Location;
 
 public interface Actor {
 	
-    // A shared random number generator to control breeding.
+    // een gedeelde nummer generator voor het voortplanten.
     public static final Random rand = Randomizer.getRandom();
 	/**
-     * Make this actor act - that is: make it do
-     * whatever it wants/needs to do.
+     *zorgt er voor dat de actor doet wat hij moet doen.
      * @param newAnimals A list to add newly born animals to.
      */
     abstract public void act(List<Actor> newActor);
 
     /**
-     * to check if the actor is alive or active.
+     * dit checkt of de actor actief is
      * @return boolean true if alive/active, false otherwise.
      */
     abstract public boolean isAlive();
     /**
-     * to set a actor dead/inactive
+     * om een actor niet actief te zetten
      * inactive actors will be removed from the field.
      */
     abstract public void setDead();
     /**
-     * Place the animal at the new location in the given field.
+     * plaatst een dier op het veld op de aangegeven locatie
      * @param newLocation The animal's new location.
      */
     abstract public void setLocation(Location newLocation, boolean rabbit);

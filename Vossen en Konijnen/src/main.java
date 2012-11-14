@@ -1,6 +1,6 @@
 
 public class main {
-	private static void averageButton()
+	private static void start()
 	{
 		
 		
@@ -17,6 +17,6 @@ public class main {
 
 	public static void main(String[] args) 
 	{
-		averageButton();
+		start();
 	}
 }

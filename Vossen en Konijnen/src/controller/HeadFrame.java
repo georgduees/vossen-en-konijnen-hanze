@@ -74,41 +74,31 @@ public class HeadFrame extends JFrame
 		JPanel eastPanel = new JPanel(new GridLayout(5, 2, 5, 0));
 		
 		
-		JLabel labelFox = new JLabel();
 		
-labelFox.setForeground(blue);
+
 JLabel fox = new JLabel("Fox");
-		
-		JLabel labelRabbit = new JLabel();
-		labelRabbit.setForeground(yellow);
+fox.setBackground(blue);
 		JLabel rabbit = new JLabel("Rabbit");
-		
-		JLabel labelWeasel = new JLabel();
-		labelWeasel.setForeground(red);
+		rabbit.setBackground(yellow);
+
 		JLabel weasel = new JLabel("Weasel ");
-		
-		JLabel labelHunter = new JLabel();
-		labelHunter.setForeground(black);
+		weasel.setBackground(red);
+
 		JLabel hunter = new JLabel("Hunter");
+		hunter.setBackground(black);
+
 		
-		JLabel labelGrass = new JLabel();
-		
-		labelGrass.setForeground(green);
 		JLabel grass = new JLabel("Grass");
-		
-		eastPanel.add(labelFox);
+		grass.setBackground(green);
+
 		eastPanel.add(fox);
 		
-		eastPanel.add(labelRabbit);
 		eastPanel.add(rabbit);
 		
-		eastPanel.add(labelWeasel);
 		eastPanel.add(weasel);
 		
-		eastPanel.add(labelHunter);
 		eastPanel.add(hunter);
 		
-		eastPanel.add(labelGrass);
 		eastPanel.add(grass);
 		
 		return eastPanel;

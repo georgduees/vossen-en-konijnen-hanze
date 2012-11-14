@@ -83,7 +83,7 @@ public class Settings extends JFrame
 	 * Here is the actual frame made where all the tabs are on
 	 * @return the frame is given back to makeFrame()
 	 */
-	private JPanel makeCenter()ab
+	private JPanel makeCenter()
 	{
 		JPanel centerPanel = new JPanel();
 		tabbedPane = new JTabbedPane();
@@ -134,28 +134,20 @@ public class Settings extends JFrame
 	   		if(tabbedPane.isEnabledAt(i) == true){
 	   			switch(i){
 	   			case 0: 
-	   				tabbedPane.setIconAt(i,iconFox);
 	    			break;
 	    		case 1:
-	    			tabbedPane.setIconAt(i,iconRabbit);
 	    			break;
 	    		case 2:
-	    			tabbedPane.setIconAt(i,iconWeasel);
 	    			break;
 	    		case 3:
-	    			tabbedPane.setIconAt(i,iconHunter);
 	    			break;
 	    		case 4: 
-	    			tabbedPane.setIconAt(i, iconGrass);
 	    			break;
 	    		case 5: 
-	    			tabbedPane.setIconAt(i,iconFood);
 	    			break;
 	    		case 6:
-	    			tabbedPane.setIconAt(i, iconPopulate);
 	    			break;
 	    		case 7:
-	    			tabbedPane.setIconAt(i, iconField);
 	    			break;
 	    		}
 	    	}

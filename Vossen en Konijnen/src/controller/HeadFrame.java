@@ -233,7 +233,6 @@ fox.setBackground(blue);
         fileMenu.add(diagram);
         fileMenu.add(reset);
         fileMenu.add(startPause);
-        fileMenu.add(mute);
         fileMenu.addSeparator();
         fileMenu.add(quitItem);
         

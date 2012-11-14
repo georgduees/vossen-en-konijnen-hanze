@@ -10,7 +10,6 @@ import model.Numbers;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-
 /**
  * een grafische weergave van het simulatie raster.
  * het raster laat gekleurde rechthoekige vak zien voor elke locatie
@@ -23,6 +22,7 @@ import java.util.Map;
  */
 public class SimulatorView
 {
+
     // kleur gebruikt voor een lege locatie.
     private static final Color EMPTY_COLOR = Color.white;
 
@@ -39,12 +39,13 @@ public class SimulatorView
     private FieldStats stats;
     private JPanel viewPanel;
     /**
-     * creëert een representatie met de gegeven breedte en hoogte.
+     * creï¿½ert een representatie met de gegeven breedte en hoogte.
      * @param height de simulator's hoogte.
      * @param width  de simulator's breedte.
      */
     public SimulatorView(int height, int width)
-    {
+    { 
+    
         stats = new FieldStats();
         colors = new LinkedHashMap<Class, Color>();
 
@@ -153,7 +154,7 @@ public class SimulatorView
         private Image fieldImage;
 
         /**
-         * creërt een nieuwe FieldView component.
+         * creï¿½rt een nieuwe FieldView component.
          */
         public FieldView(int height, int width)
         {
@@ -203,7 +204,7 @@ public class SimulatorView
         }
 
         /**
-         * het veld weergave component moet opnieuw weergegeven. kopieër de
+         * het veld weergave component moet opnieuw weergegeven. kopieï¿½r de
          * interne afbeelding tot het scherm.
          */
         public void paintComponent(Graphics g)
@@ -220,5 +221,6 @@ public class SimulatorView
             }
         }
     }
+    
 }
 

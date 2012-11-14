@@ -14,14 +14,22 @@ import view.SimulatorView;
  *@version 2012.11.13
  */
 public class HeadFrame extends JFrame
-{
+{ 
+    // Set System L&F
+
+
+
 	// Initialization of all the variables
 	private static final long serialVersionUID = 3550050864011322216L;
 	private JFrame frame;
 	private static Simulator sim;
 	private SimulatorView view;
 	private Diagram diagram; 
-	private static Color blue,yellow,red,black,green;
+	private static Color blue;
+	private static Color red;
+	private static Color green;
+	private static Color yellow;
+	private static Color black;
 	/**
 	 * Contructor it gets a view and a simulator sets them for this headframe,
 	 * allowing the buttons to interact with the simulator.
@@ -59,6 +67,23 @@ public class HeadFrame extends JFrame
 		JPanel eastPanel = makeEastPanel();
 		contentPane.add(westPanel, BorderLayout.WEST);
 		contentPane.add(eastPanel, BorderLayout.EAST);
+		 try {
+	            // Set System L&F
+	        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+	    } 
+	    catch (UnsupportedLookAndFeelException e) {
+	       // handle exception
+	    }
+	    catch (ClassNotFoundException e) {
+	       // handle exception
+	    }
+	    catch (InstantiationException e) {
+	       // handle exception
+	    }
+	    catch (IllegalAccessException e) {
+	       // handle exception
+	    }
+		 SwingUtilities.updateComponentTreeUI(frame);
 
 		frame.pack();
 		frame.setVisible(true);
@@ -77,19 +102,19 @@ public class HeadFrame extends JFrame
 		
 
 JLabel fox = new JLabel("Fox");
-fox.setBackground(blue);
+fox.setForeground(Color.blue);
 		JLabel rabbit = new JLabel("Rabbit");
-		rabbit.setBackground(yellow);
+		rabbit.setForeground(Color.yellow);
 
 		JLabel weasel = new JLabel("Weasel ");
-		weasel.setBackground(red);
+		weasel.setForeground(Color.red);
 
 		JLabel hunter = new JLabel("Hunter");
-		hunter.setBackground(black);
+		hunter.setForeground(Color.black);
 
 		
 		JLabel grass = new JLabel("Grass");
-		grass.setBackground(green);
+		grass.setForeground(Color.green);
 
 		eastPanel.add(fox);
 		

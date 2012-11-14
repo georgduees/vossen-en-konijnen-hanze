@@ -296,7 +296,7 @@ public class HeadFrame extends JFrame
 	public void about()
 	{
 		about.playSoundOnce();
-		JOptionPane.showMessageDialog(this, "A simulation program with foxes, rabbits, weasels and hunters. \n\nMade by:\n \nTycho Marinus \nCor Sloot \nMark Visscher \nLuuk Blom \n\nVersion 1.0");
+		JOptionPane.showMessageDialog(this, "Simulatie Vossen en Konijnen. \n\ngemaakt door:\n \nBastiaan Vreijsen\n Christian Hilbrands\n Georg Duees");
 	}
 	
 	/**

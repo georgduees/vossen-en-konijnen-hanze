@@ -21,7 +21,7 @@ public class HeadFrame extends JFrame
 	private static Simulator sim;
 	private SimulatorView view;
 	private Diagram diagram; 
-	
+	private static Color blue,yellow,red,black,green;
 	/**
 	 * Contructor it gets a view and a simulator sets them for this headframe,
 	 * allowing the buttons to interact with the simulator.
@@ -75,23 +75,25 @@ public class HeadFrame extends JFrame
 		
 		
 		JLabel labelFox = new JLabel();
-		labelFox.setIcon(blue);
-		JLabel fox = new JLabel("Fox");
+		
+labelFox.setForeground(blue);
+JLabel fox = new JLabel("Fox");
 		
 		JLabel labelRabbit = new JLabel();
-		labelRabbit.setIcon(yellow);
+		labelRabbit.setForeground(yellow);
 		JLabel rabbit = new JLabel("Rabbit");
 		
 		JLabel labelWeasel = new JLabel();
-		labelWeasel.setIcon(red);
+		labelWeasel.setForeground(red);
 		JLabel weasel = new JLabel("Weasel ");
 		
 		JLabel labelHunter = new JLabel();
-		labelHunter.setIcon(black);
+		labelHunter.setForeground(black);
 		JLabel hunter = new JLabel("Hunter");
 		
 		JLabel labelGrass = new JLabel();
-		labelGrass.setIcon(green);
+		
+		labelGrass.setForeground(green);
 		JLabel grass = new JLabel("Grass");
 		
 		eastPanel.add(labelFox);

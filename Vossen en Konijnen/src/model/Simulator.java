@@ -114,11 +114,7 @@ public class Simulator implements Runnable
     	this.numSteps = numSteps;
     	thread = new Thread(this);
     	thread.start();
-    	if(numSteps >= 20){
-    		if(!AnimalNumbers.getMute()){
-    			music.playSound();
-    		}
-    	}
+    	
     	
     }
     
@@ -189,14 +185,12 @@ public class Simulator implements Runnable
     		synchronized (thread){
     			if (go) {
     				go = false;
-    				music.stopSound();
+    				
     			}
     			else if (!go){
     				go = true;
     				thread.notify();
-    				if(thread.isAlive() && !frame.mute){
-    			    		music.playSound();    			    	
-    				}
+    				
     			}
     		}
     	}
@@ -212,15 +206,12 @@ public class Simulator implements Runnable
     		keepGoing = true;
     		thread = new Thread(this);
     		thread.start();
-    		if(!AnimalNumbers.getMute())
-    		{
-        		music.playSound();
-        	}
+    		
     		
     	}
     	else if (keepGoing) {
     		keepGoing = false;
-    		music.stopSound();
+    		
     	}
     }
     
@@ -301,7 +292,7 @@ public class Simulator implements Runnable
         populate();
         go = true;
         keepGoing = false;
-        music.stopSound();
+      
         
         // Show the starting state in the view.
         view.showStatus(field);

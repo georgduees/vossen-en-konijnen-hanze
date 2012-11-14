@@ -89,7 +89,7 @@ public class Settings extends JFrame
 		tabbedPane = new JTabbedPane();
 
 		FoxPanel foxPanel = new FoxPanel();
-		tabbedPane.insertTab("Fox", iconFox, foxPanel,"Fox settings",0);
+		tabbedPane.insertTab("Fox", null, foxPanel,"Fox settings",0);
 
 		JPanel rabbitPanel = new RabbitPanel();
 		tabbedPane.insertTab("Rabbit", null, rabbitPanel, "Rabbit settings",1);

@@ -14,19 +14,10 @@ import javax.swing.event.ChangeListener;
 
 public class Settings extends JFrame
 {
-	private static final long serialVersionUID = 671401579777574634L;
+	//rivate static final long serialVersionUID = 671401579777574634L;
 	private JFrame frameSettings;
 	private JTabbedPane tabbedPane;
     
-	//Images for the tabs are given to variables 
-	ImageIcon iconFox = new ImageIcon("Images/fox.gif");
-	ImageIcon iconHunter = new ImageIcon("Images/hunter.gif");
-	ImageIcon iconRabbit = new ImageIcon("Images/rabbit.gif");
-	ImageIcon iconWeasel = new ImageIcon("Images/weasel.gif");
-	ImageIcon iconFood = new ImageIcon("Images/food.gif");
-	ImageIcon iconGrass = new ImageIcon("Images/grass.gif");
-	ImageIcon iconField = new ImageIcon("Images/grid.gif");
-	ImageIcon iconPopulate = new ImageIcon("Images/populate.gif");
 	
 	private JPanel center;
 	private int previousI = 0;
@@ -92,7 +83,7 @@ public class Settings extends JFrame
 	 * Here is the actual frame made where all the tabs are on
 	 * @return the frame is given back to makeFrame()
 	 */
-	private JPanel makeCenter()
+	private JPanel makeCenter()ab
 	{
 		JPanel centerPanel = new JPanel();
 		tabbedPane = new JTabbedPane();

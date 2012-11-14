@@ -12,36 +12,36 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
- * A graphical view of the simulation grid.
- * The view displays a colored rectangle for each location 
- * representing its contents. It uses a default background color.
- * Colors for each type of species can be defined using the
- * setColor method.
+ * een grafische weergave van het simulatie raster.
+ * het raster laat gekleurde rechthoekige vak zien voor elke locatie
+ * wat de inhoud representeerd. er is een standaard achtergrond kleur ingesteld.
+ * elk type dier heeft een eigen kleur en die kan gedefineerd worden met de
+ * setColor methode.
  * 
  * @author Bastiaan Vreijsen, Christian Hilbrands, Georg Duees
  * @version 2012.11.13
  */
 public class SimulatorView
 {
-    // Colors used for empty locations.
+    // kleur gebruikt voor een lege locatie.
     private static final Color EMPTY_COLOR = Color.white;
 
-    // Color used for objects that have no defined color.
+    // kleur gebruikt voor objecten die geen voorgedefineerde kleur.
     private static final Color UNKNOWN_COLOR = Color.gray;
 
     private final String STEP_PREFIX = "Step: ";
     private JLabel stepLabel;
     private FieldView fieldView;
     
-    // A map for storing colors for participants in the simulation
+    // Een kaart voor het opslaan van kleuren voor de deelnemers in de simulatie
     private Map<Class, Color> colors;
     // A statistics object computing and storing simulation information
     private FieldStats stats;
     private JPanel viewPanel;
     /**
-     * Create a view of the given width and height.
-     * @param height The simulation's height.
-     * @param width  The simulation's width.
+     * creëert een representatie met de gegeven breedte en hoogte.
+     * @param height de simulator's hoogte.
+     * @param width  de simulator's breedte.
      */
     public SimulatorView(int height, int width)
     {
@@ -59,9 +59,9 @@ public class SimulatorView
     }
     
     /**
-     * Define a color to be used for a given class of animal.
-     * @param animalClass The animal's Class object.
-     * @param color The color to be used for the given class.
+     * defineerd een kleur wat wordt gebruikt voor de klasse van de dier.
+     * @param animalClass het klasse object van het dier.
+     * @param color kleur voor de gegeven klasse object.
      */
     public void setColor(Class animalClass, Color color)
     {
@@ -69,7 +69,7 @@ public class SimulatorView
     }
 
     /**
-     * @return The color to be used for a given class of animal.
+     * @return de kleur gebruikt voor de gegeven dier klasse.
      */
     private Color getColor(Class animalClass)
     {
@@ -84,9 +84,9 @@ public class SimulatorView
     }
 
     /**
-     * Show the current status of the field.
-     * @param step Which iteration step it is.
-     * @param field The field whose status is to be displayed.
+     * geeft de status van het veld weer.
+     * @param step welke iterator stap het is.
+     * @param field het veld waarvan de status wordt weergegeven.
      */
     public void showStatus(Field field)
     {
@@ -112,8 +112,8 @@ public class SimulatorView
     }
 
     /**
-     * Determine whether the simulation should continue to run.
-     * @return true If there is more than one species alive.
+     * stelt vast of de simulatie door moet gaan.
+     * @return true als er meer dan 1 soort wezen levendig is.
      */
     public boolean isViable(Field field)
     {
@@ -121,7 +121,7 @@ public class SimulatorView
     }
     
     /**
-     * Setter for viewPanel
+     * Setter voor viewPanel
      * @param viewPanel
      */
     public void setViewPanel(JPanel viewPanel) {
@@ -129,7 +129,7 @@ public class SimulatorView
 	}
 
     /**
-     * getter for viewPanel
+     * getter voor viewPanel
      * @return viewpanel
      */
 	public JPanel getViewPanel() {
@@ -137,12 +137,10 @@ public class SimulatorView
 	}
 
 	/**
-     * Provide a graphical view of a rectangular field. This is 
-     * a nested class (a class defined inside a class) which
-     * defines a custom component for the user interface. This
-     * component displays the field.
-     * This is rather advanced GUI stuff - you can ignore this 
-     * for your project if you like.
+     * zorgt voor een grafische representatie van een rechthoekig veld. dit is 
+     * een genestelde klasse(een klasse in een klasse gedefineerd) wat een 
+     * op maat gemaakte component voor de gebruikers interface defineerd. deze
+     * component weergeeft het veld.
      */
     private class FieldView extends JPanel
     {
@@ -155,7 +153,7 @@ public class SimulatorView
         private Image fieldImage;
 
         /**
-         * Create a new FieldView component.
+         * creërt een nieuwe FieldView component.
          */
         public FieldView(int height, int width)
         {
@@ -165,7 +163,7 @@ public class SimulatorView
         }
 
         /**
-         * Tell the GUI manager how big we would like to be.
+         * zeg tegen de GUI manager hoe groot het moet zijn.
          */
         public Dimension getPreferredSize()
         {
@@ -174,8 +172,8 @@ public class SimulatorView
         }
 
         /**
-         * Prepare for a new round of painting. Since the component
-         * may be resized, compute the scaling factor again.
+         * prepareer het veld voor de volgende ronde. sinds het component
+         * resizeble is, moet de pc opnieuw de hoeken berekenen.
          */
         public void preparePaint()
         {
@@ -196,7 +194,7 @@ public class SimulatorView
         }
 
         /**
-         * Paint on grid location on this field in a given color.
+         * kleur de raster locatie voor dit veld in de gegeven kleur.
          */
         public void drawMark(int x, int y, Color color)
         {
@@ -205,8 +203,8 @@ public class SimulatorView
         }
 
         /**
-         * The field view component needs to be redisplayed. Copy the
-         * internal image to screen.
+         * het veld weergave component moet opnieuw weergegeven. kopieër de
+         * interne afbeelding tot het scherm.
          */
         public void paintComponent(Graphics g)
         {

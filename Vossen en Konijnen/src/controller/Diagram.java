@@ -372,6 +372,7 @@ public class Diagram
 
 	private JPanel makeChartPanel()
 	{
+		//tabbed menu here
 		JPanel chartPanel = new JPanel(new GridLayout(0, 2));
 		if (chartAlive){
 			chartPanel.add(aliveChartPanel);
@@ -811,7 +812,8 @@ public class Diagram
 			datasetDeaths.addSeries(seriesOldRabbits);
 			datasetDeaths.addSeries(seriesOldWeasels);
 			
-	        chart = ChartFactory.createXYLineChart("Total animals death chart", // Title
+	        chart = ChartFactory.createXYLineChart(
+	        		"Total animals death chart", // Title
 	                "steps", // x-axis Label
 	                "Deaths", // y-axis Label
 	                datasetDeaths, // Dataset

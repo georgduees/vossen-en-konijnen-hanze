@@ -11,6 +11,6 @@ public class main {
 		// Set the default locale to custom locale
 		locale = new Locale("en");
 		Locale.setDefault(locale);
-		averageButton();
+		StartVossenKonijnen.averageButton();
 	}
 }

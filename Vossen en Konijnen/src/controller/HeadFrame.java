@@ -25,11 +25,7 @@ public class HeadFrame extends JFrame
 	private static Simulator sim;
 	private SimulatorView view;
 	private Diagram diagram; 
-	private static Color blue;
-	private static Color red;
-	private static Color green;
-	private static Color yellow;
-	private static Color black;
+
 	/**
 	 * Contructor it gets a view and a simulator sets them for this headframe,
 	 * allowing the buttons to interact with the simulator.
@@ -104,7 +100,7 @@ public class HeadFrame extends JFrame
 JLabel fox = new JLabel("Fox");
 fox.setForeground(Color.blue);
 		JLabel rabbit = new JLabel("Rabbit");
-		rabbit.setForeground(Color.yellow);
+		rabbit.setForeground(Color.orange);
 
 		JLabel weasel = new JLabel("Weasel ");
 		weasel.setForeground(Color.red);

@@ -164,7 +164,7 @@ fox.setBackground(blue);
 		westPanel.add(diagram);
 		westPanel.add(keepGoing);
 		westPanel.add(freeSteps);
-		westPanel.add(mute);
+
 		
 		return westPanel;
 	}

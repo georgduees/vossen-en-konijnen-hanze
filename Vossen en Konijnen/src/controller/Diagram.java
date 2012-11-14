@@ -372,7 +372,6 @@ public class Diagram
 
 	private JPanel makeChartPanel()
 	{
-		//tabbed menu here
 		JPanel chartPanel = new JPanel(new GridLayout(0, 2));
 		if (chartAlive){
 			chartPanel.add(aliveChartPanel);
@@ -417,7 +416,7 @@ public class Diagram
 		reasonCheck = new JCheckBox("Show death reason chart", chartReason);
 		reasonCheck.addItemListener(new ItemListener() { public void itemStateChanged(ItemEvent e) { setReasonChart(); }});
 		
-
+	
 		settingsPanel.add(averageButton);
 		settingsPanel.add(aliveCheck);
 		settingsPanel.add(deathsCheck);
@@ -736,96 +735,6 @@ public class Diagram
 		seriesRabbits.clear();
 		seriesWeasels.clear();
 	}
-	
-
-
-	/**
-	 * Inner class that makes a new frame for the old chart.
-	 */
-		
-	@SuppressWarnings("serial")
-	private class oldDiagram extends JFrame
-	{
-		
-		// Initialization of all the series
-		 
-		private XYSeries seriesOldTotal;
-		private XYSeries seriesOldFoxes;
-		private XYSeries seriesOldRabbits;
-		private XYSeries seriesOldWeasels;
-		private XYSeries seriesOldTotalAlive;
-		private XYSeries seriesOldFoxesAlive;
-		private XYSeries seriesOldRabbitsAlive;
-		private XYSeries seriesOldWeaselsAlive;
-		
-		// Initialization of the charts
-		
-		private JFreeChart chart;
-		private JFreeChart chart2;
-		private XYSeriesCollection datasetDeaths;
-		
-		//  Initialization of all the chartpanels
-		 
-		private ChartPanel deathsChartPanel;
-		private JPanel chartPanel;
-		
-		
-		
-
-		/**
-		 * Method to make the alive chart in a panel.
-		 * @return ChartPanel
-		 */
-		public ChartPanel makeAliveChart()
-		{
-		    ChartPanel chartPanel;
-		    XYSeriesCollection datasetOldAlive = new XYSeriesCollection();
-
-			datasetOldAlive.addSeries(seriesOldTotalAlive);
-			datasetOldAlive.addSeries(seriesOldFoxesAlive);
-			datasetOldAlive.addSeries(seriesOldRabbitsAlive);
-			datasetOldAlive.addSeries(seriesOldWeaselsAlive);
-			chart2 = ChartFactory.createXYLineChart(
-		            "Alive",
-		            "Steps", "Alive",
-		            datasetOldAlive,
-		            PlotOrientation.VERTICAL,
-		            true,  // legend
-		            true,  // tool tips
-		            false  // URLs
-		        );
-	        chartPanel = new ChartPanel(chart2);
-			return chartPanel;
-		}
-		
-		/**
-		 * Method to make the deaths chart its returned in a panel
-		 * @return ChartPanel
-		 */
-		public ChartPanel makeDeathsChart()
-		{
-			// Make the first chart (Animal deaths chart)
-			datasetDeaths = new XYSeriesCollection();
-			
-			datasetDeaths.addSeries(seriesOldTotal);
-			datasetDeaths.addSeries(seriesOldFoxes);
-			datasetDeaths.addSeries(seriesOldRabbits);
-			datasetDeaths.addSeries(seriesOldWeasels);
-			
-	        chart = ChartFactory.createXYLineChart(
-	        		"Total animals death chart", // Title
-	                "steps", // x-axis Label
-	                "Deaths", // y-axis Label
-	                datasetDeaths, // Dataset
-	                PlotOrientation.VERTICAL, // Plot Orientation
-	                true, // Show Legend
-	                true, // Use tooltips
-	                false // Configure chart to generate URLs?
-	            );
-			
-	       deathsChartPanel = new ChartPanel(chart);
-			
-			return deathsChartPanel;
-		}
 	}
-}
+
+

@@ -35,18 +35,17 @@ public class Settings extends JFrame
 	 */
 	private void makeFrame()
 	{
-		//create new JFrame called Settings
-		frameSettings = new JFrame("Settings");
-		//create a new menu bar
-		makeMenuBar(frameSettings);
-		
-		Container contentPane = frameSettings.getContentPane();
+	
+		Container contentPane = new JPanel();
 		contentPane.setLayout(new BorderLayout());
 		
 		center = makeCenter();
 		contentPane.add(center, BorderLayout.CENTER);
-		frameSettings.pack();
-		frameSettings.setVisible(true);
+		
+	}
+	public Container getContainer(){
+		return center;
+		
 	}
 	
 	/**
@@ -54,35 +53,7 @@ public class Settings extends JFrame
 	 * with the option to quit the program.
 	 * @param framePreferences
 	 */
-	private void makeMenuBar(JFrame frameSettings)
-	{
-		JMenuBar menuBar = new JMenuBar();
-		frameSettings.setJMenuBar(menuBar);
-		
-		JMenu fileMenu = new JMenu("File");
-		menuBar.add(fileMenu);
-
-        JMenuItem quitItem = new JMenuItem("Quit");
-        quitItem.addActionListener(new ActionListener() {
-        	public void actionPerformed(ActionEvent e) { quit(); }
-        });
-        //Add the quitItem to the fileMenu
-        fileMenu.add(quitItem);
-	}
 	
-	/**
-	 * Sets the frame visibility to false, so the frame appears to be closed.
-	 * Using the "System.exit(0);" exits the entire program.
-	 */
-	private void quit()
-	{
-		frameSettings.setVisible(false);
-	}
-	
-	/**
-	 * Here is the actual frame made where all the tabs are on
-	 * @return the frame is given back to makeFrame()
-	 */
 	private JPanel makeCenter()
 	{
 		JPanel centerPanel = new JPanel();

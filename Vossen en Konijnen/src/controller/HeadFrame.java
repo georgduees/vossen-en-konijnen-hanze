@@ -30,6 +30,7 @@ public class HeadFrame extends JFrame
 	private JPanel center;
 	private JTabbedPane tabbedPanel;
 	private JComponent simulatorContainer;
+	private Settings settings;
 	private int previousI=0;
 
 	/**
@@ -42,6 +43,7 @@ public class HeadFrame extends JFrame
 	{ 
 		this.diagram = new Diagram();
 		this.sim = sim;
+		this.settings = new Settings();
 		this.view = view;
 		makeFrame();
 		
@@ -108,7 +110,7 @@ public class HeadFrame extends JFrame
 		
 		tabbedPanel.insertTab("Simulator", null,simulatorContainer, "SimulatorView",0);
 		JComponent SettingsPanel = new JPanel();
-		tabbedPanel.insertTab("Settings", null,SettingsPanel, "Settings",1);
+		tabbedPanel.insertTab("Settings", null,this.settings.getContainer(), "Settings",1);
 		
 		tabbedPanel.addChangeListener(new ChangeListener(){
 			public void stateChanged(ChangeEvent e){changeOfTab(e);}

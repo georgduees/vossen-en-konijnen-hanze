@@ -416,20 +416,7 @@ public class Diagram
 		reasonCheck = new JCheckBox("Show death reason chart", chartReason);
 		reasonCheck.addItemListener(new ItemListener() { public void itemStateChanged(ItemEvent e) { setReasonChart(); }});
 		
-		JButton write = new JButton("Write to file.");
-		write.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				writeToFile();
-			}
-		});
-		JButton read = new JButton("Read array from file.");
-		read.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				readFromFile();
-			}
-		});
-		settingsPanel.add(read);
-		settingsPanel.add(write);
+
 		settingsPanel.add(averageButton);
 		settingsPanel.add(aliveCheck);
 		settingsPanel.add(deathsCheck);
@@ -749,24 +736,8 @@ public class Diagram
 		seriesWeasels.clear();
 	}
 	
-	/**
-	 * method to write series to file
-	 */
-	public void writeToFile()
-	{
-		WriteToFile.writeArray(seriesTotal, seriesFoxes, seriesRabbits,
-				seriesWeasels, seriesTotalAlive, 
-				seriesFoxesAlive, seriesRabbitsAlive, seriesWeaselsAlive);
-	}
-	
-	/**
-	 * method to read array from a file
-	 */
-	public void readFromFile()
-	{
-		ArrayList<double[]> array = WriteToFile.readFile();
-		new oldDiagram(array);
-	}
+
+
 	/**
 	 * Inner class that makes a new frame for the old chart.
 	 */
@@ -797,98 +768,9 @@ public class Diagram
 		private ChartPanel deathsChartPanel;
 		private JPanel chartPanel;
 		
-		/**
-		 * Makes a new frame with old data read from the array.
-		 * @param array
-		 */
-		public oldDiagram(ArrayList<double[]> array)
-		{
-			makeSeries(array);
-			Container contentPane = getContentPane();
-			chartPanel = makeOldChartPanel();
-			contentPane.add(chartPanel);
-			
-			pack();
-			setVisible(true);
-			
-		}
 		
-		/**
-		 * Method to make the series needed for the old diagram. 
-		 * @param array
-		 */
-		public void makeSeries(ArrayList<double[]> array)
-		{
-			seriesOldTotal = new XYSeries("Total deaths");
-			seriesOldFoxes = new XYSeries("Fox deaths");
-			seriesOldRabbits = new XYSeries("Rabbit deaths");
-			seriesOldWeasels = new XYSeries("Weasel deaths");
-			seriesOldTotalAlive = new XYSeries("Total alive");
-			seriesOldFoxesAlive = new XYSeries("Foxes alive");
-			seriesOldRabbitsAlive = new XYSeries("Rabbits alive");
-			seriesOldWeaselsAlive = new XYSeries("Weasels alive");
+		
 
-			int e = 0;
-			for (double dub : array.get(0)){
-				//double doub = dub[4]; 
-				seriesOldTotal.add(e, dub);
-				e++;
-			}
-			e = 0;
-			for (double dub : array.get(1)){
-				//double doub = dub[5]; 
-				seriesOldFoxes.add(e, dub);
-				e++;
-			}
-			e = 0;
-			for (double dub : array.get(2)){
-				//double doub = dub[5]; 
-				seriesOldRabbits.add(e, dub);
-				e++;
-			}
-			e = 0;
-			for (double dub : array.get(3)){
-				//double doub = dub[5]; 
-				seriesOldWeasels.add(e, dub);
-				e++;
-			}
-			e = 0;
-			for (double dub : array.get(4)){
-				//double doub = dub[5]; 
-				seriesOldTotalAlive.add(e, dub);
-				e++;
-			}
-			e = 0;
-			for (double dub : array.get(5)){
-				//double doub = dub[5]; 
-				seriesOldFoxesAlive.add(e, dub);
-				e++;
-			}
-			e = 0;
-			for (double dub : array.get(6)){
-				//double doub = dub[6]; 
-				seriesOldRabbitsAlive.add(e, dub);
-				e++;
-			}
-			e = 0;
-			for (double dub : array.get(7)){
-				//double doub = dub[7]; 
-				seriesOldWeaselsAlive.add(e, dub);
-				e++;
-			}
-		}
-		
-		/**
-		 * Makes a panel for the charts.
-		 * @return JPanel
-		 */
-		public JPanel makeOldChartPanel()
-		{
-			JPanel oldChartPanel = new JPanel(new GridLayout(2, 2));
-			oldChartPanel.add(makeAliveChart());
-			oldChartPanel.add(makeDeathsChart());
-			return oldChartPanel;
-		}
 		/**
 		 * Method to make the alive chart in a panel.
 		 * @return ChartPanel

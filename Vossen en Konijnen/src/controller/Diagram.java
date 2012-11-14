@@ -6,7 +6,6 @@ package controller;
 
 // all the imports
 import model.Numbers;
-import model.WriteToFile;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;

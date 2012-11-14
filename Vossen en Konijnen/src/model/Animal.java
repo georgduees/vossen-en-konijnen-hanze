@@ -12,44 +12,43 @@ import view.Location;
 
 public abstract class Animal implements Actor
 {
-    // Whether the animal is alive or not.
+    // geeft aan of het dier nog leeft.
     private boolean alive;
-    // The animal's field.
+    // veld van het dier.
     private Field field;
-    // The animal's position in the field.
+    // locatie op het veld van het dier.
     private Location location;
-    // The variable that keeps track if the animal is standing on grass.
+    // houd bij of het dier op gras staat.
     private boolean onGrass;
-    
+    // de leeftijd waar op het dier kan gaan voortplanten.
     protected int age;
-    // The age at which a animal can start to breed.
     
-    //The food level of an animal.
+    //het voedselnieau van het dier.
     protected int foodLevel;
-    //The maximum food level an animal can have.
+    //het maximum voedselniveaw van het dier.
     protected int maxFoodLevel;
-    // the age of the animal
+    // leeftijd van het dier
     protected int breedingAge;
-    // The age to which a animal can live.
+    // de maximale leeftijd van het dier.
     protected int maxAge;
-    // The likelihood of a animal breeding.
+    // voortplantingskans.
     protected int breedingProbability;
-    // The maximum number of births of an animal.
+    // maximum aantal jongen die een dier kan krijgen.
     protected int maxLitterSize;
     
-    //This are the food values of different types of food. In effect, 
-    //there are the number of steps an animal can go before it has to eat again.
-    // The food value of a single rabbit. 
+    //dit zijn de waarden van de verschillende voedellevels, 
+    //hier zijn het aantal stappen die een dier moet maken voor het weer moet eten.
+    // de eetwaarde van een konijn. 
     protected int rabbitFoodValue = AnimalNumbers.getRabbitFoodValue(); 
-    //The food value of a single young fox. 
+    //de eetwaarde van een vos. 
     protected int youngFoxFoodValue = AnimalNumbers.getYoungFoxFoodValue();
-    //The food level of a patch of grass.
+    //de voedselwaarde van een stuk gras.
     protected int grassFoodValue = AnimalNumbers.getGrassFoodValue();
 
 
     
     /**
-     * Create a new animal at location in field.
+     * maakt een nieuw dier aan op een locatie in het veld.
      * 
      * @param field The field currently occupied.
      * @param location The location within the field.
@@ -62,14 +61,13 @@ public abstract class Animal implements Actor
     }
     
     /**
-     * Make this animal act - that is: make it do
-     * whatever it wants/needs to do.
+     * zorgt er voor dat het dier wat doet
      * @param newActor A list to add newly born animals to.
      */
     abstract public void act(List<Actor> newActor);
 
     /**
-     * Check whether the animal is alive or not.
+     * kijkt of het dier nog leeft.
      * @return true if the animal is still alive.
      */
     public boolean isAlive()

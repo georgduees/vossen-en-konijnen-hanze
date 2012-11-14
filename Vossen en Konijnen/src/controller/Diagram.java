@@ -18,24 +18,24 @@ import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
 import java.awt.BorderLayout;
 import java.awt.Container;
-import java.awt.GraphicsEnvironment;
+//import java.awt.GraphicsEnvironment;
 import java.awt.GridLayout;
-import java.awt.Point;
+//import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
-import javax.swing.JButton;
+//import java.awt.event.ItemEvent;
+//import java.awt.event.ItemListener;
+//import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JDialog;
+//import javax.swing.JDialog;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
+//import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
+//import javax.swing.JTextField;
 
 public class Diagram 
 {	
@@ -507,7 +507,7 @@ public class Diagram
 	/**
 	 * Method to enable or disable showing the alive chart.
 	 */
-	private void setReasonChart()
+	/*private void setReasonChart()
 	{
 		if (chartReason && deathReasonChart != null){
 			chartPanel.remove(deathReasonChart);
@@ -535,10 +535,11 @@ public class Diagram
 
 		}
 	}
+	*/
 	/**
 	 * Method to enable or disable showing the alive chart.
 	 */
-	private void setAverageChart()
+	/*private void setAverageChart()
 	{
 		if (chartAverage){
 			chartPanel.remove(avereageChartPanel);
@@ -563,9 +564,11 @@ public class Diagram
 			
 		}
 	}
+	*/
 	/**
 	 * Method to enable or disable showing the deaths chart.
 	 */
+	/*
 	private void setDeathsChart()
 	{
 		if (chartDeaths){
@@ -586,10 +589,11 @@ public class Diagram
 			}
 		}
 	}
-
+*/
 	/**
 	 * Method to enable or disable showing the deaths chart.
 	 */
+	/*
 	private void setPercentageChart()
 	{
 		if (chartPercentage){
@@ -610,7 +614,7 @@ public class Diagram
 			}
 		}
 	}
-	
+	*/
 	/**
 	 * Method to add one step to all the series. This automatically also 
 	 * updates the diagrams

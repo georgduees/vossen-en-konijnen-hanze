@@ -154,10 +154,7 @@ fox.setBackground(blue);
 			public void actionPerformed(ActionEvent e) { freeSteps(); }
 		});
 		
-		JButton mute = new JButton("Mute / Unmute");
-		mute.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) { mute(); }
-		});
+		
 		
 		westPanel.add(speed);
 		westPanel.add(oneStep);

@@ -20,17 +20,7 @@ public class HeadFrame extends JFrame
 	private JFrame frame;
 	private static Simulator sim;
 	private SimulatorView view;
-	private Diagram diagram;
-	public boolean mute;  
-    ImageIcon blue = new ImageIcon("Images/Blue.gif");
-    ImageIcon black = new ImageIcon("Images/Black.gif");
-    ImageIcon green = new ImageIcon("Images/Green.gif");
-    ImageIcon red = new ImageIcon("Images/Red.gif");
-    ImageIcon yellow = new ImageIcon("Images/Yellow.gif");
-
-	private Sound button = new Sound(getClass().getResource("button-20.wav"));
-	private Sound error = new Sound(getClass().getResource("button-10.wav"));
-	private Sound about = new Sound(getClass().getResource("about.wav"));
+	private Diagram diagram; 
 	
 	/**
 	 * Contructor it gets a view and a simulator sets them for this headframe,

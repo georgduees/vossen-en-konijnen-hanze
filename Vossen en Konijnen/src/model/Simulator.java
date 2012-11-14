@@ -52,7 +52,7 @@ public class Simulator implements Runnable
     private int viewSpeed = 90;
     // The music during simulating
     //private Sound music = new Sound(getClass().getResource("Brightbeat.wav"));
-    private Sound intro = new Sound(getClass().getResource("welcome.wav"));  
+    private Sound intro = new Sound(getClass().getResource("startup.wav"));  
     private boolean go = true;
     // an internal counter to check if the maximum of the number of hunters is reached.
     private int numberOfHunters;
@@ -76,7 +76,7 @@ public class Simulator implements Runnable
     public Simulator(int depth, int width)
     {
     	
-    //	intro.playSoundOnce();
+    	intro.playSoundOnce();
     	
     	
         if(width <= 0 || depth <= 0) {

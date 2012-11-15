@@ -64,11 +64,11 @@ public class HeadFrame extends JFrame
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container contentPane = frame.getContentPane();
 contentPane.setLayout(new BorderLayout());
-		contentPane.getPreferredSize();
+		
 		simulatorContainer.getPreferredSize();
 		
 		center = makeCenter();
-		contentPane.add(center);
+		contentPane.add(center,BorderLayout.CENTER);
 		simulatorContainer.add(view.getViewPanel(), BorderLayout.CENTER);
 		
 		JPanel westPanel = makeWestPanel();
@@ -93,10 +93,13 @@ contentPane.setLayout(new BorderLayout());
 		
 		
 		tabbedPanel.insertTab("Simulator", null,simulatorContainer, "SimulatorView",0);
-		Container DiagramPanel = this.getDiagram().getcontentPane();
+		Container DiagramPanel1 = this.getDiagram().getChart1();
+		Container DiagramPanel2 = this.getDiagram().getChart2();
+				Container DiagramPanel3 = this.getDiagram().getChart3();
 		tabbedPanel.insertTab("Settings", null,this.settings.getContainer(), "Settings",1);
-		tabbedPanel.insertTab("Diagrams", null,DiagramPanel, "Diagrams",2);
-		
+		tabbedPanel.insertTab("Diagram 1", null,DiagramPanel1, "Diagram 1",2);
+		tabbedPanel.insertTab("Diagram 2", null,DiagramPanel2, "Diagram 2",3);
+		tabbedPanel.insertTab("Diagram 3", null,DiagramPanel3, "Diagram 3",4);
 		tabbedPanel.addChangeListener(new ChangeListener(){
 			public void stateChanged(ChangeEvent e){changeOfTab(e);}
 		});

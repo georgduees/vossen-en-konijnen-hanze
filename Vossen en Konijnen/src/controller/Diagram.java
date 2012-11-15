@@ -74,6 +74,10 @@ public class Diagram
 	private ChartPanel percentageChartPanel;
 	private ChartPanel deathReasonChart;
 	private JPanel chartPanel;
+	private JPanel chartPanel1;
+
+	private JPanel chartPanel2;
+
 	private boolean chartReason = false;
 
 	/**
@@ -100,14 +104,22 @@ public class Diagram
 		contentPane.setLayout(new BorderLayout());
 
 		chartPanel = makeChartPanel();
+		chartPanel1 = makeChartPanel1();
+		chartPanel2 = makeChartPanel2();
 		contentPane.add(chartPanel, BorderLayout.CENTER);
 
 	
 	}
-	public Container getcontentPane()
+	public Container getChart1()
 	{
 		return chartPanel;
 		
+	}
+	public Container getChart2(){
+		return chartPanel1;
+	}
+	public Container getChart3(){
+		return chartPanel2;
 	}
 	
 	/**
@@ -231,12 +243,30 @@ public class Diagram
 
 	private JPanel makeChartPanel()
 	{
-		JPanel chartPanel = new JPanel(new GridLayout(0, 2));
+		JPanel chartPanel = new JPanel();
 			chartPanel.add(aliveChartPanel);
+			
+			//makeReasonChart();
+			//chartPanel.add(deathsChartPanel);
+		return chartPanel;
+	}
+	private JPanel makeChartPanel1()
+	{
+		JPanel chartPanel = new JPanel();
+			
 			chartPanel.add(deathsChartPanel);
+		
+			//makeReasonChart();
+			//chartPanel.add(deathsChartPanel);
+		return chartPanel;
+	}
+	private JPanel makeChartPanel2()
+	{
+		JPanel chartPanel = new JPanel();
+			
 			chartPanel.add(percentageChartPanel);
-			makeReasonChart();
-			chartPanel.add(deathsChartPanel);
+			//makeReasonChart();
+			//chartPanel.add(deathsChartPanel);
 		return chartPanel;
 	}
 

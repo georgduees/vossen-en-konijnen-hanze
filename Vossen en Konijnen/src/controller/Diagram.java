@@ -96,16 +96,18 @@ public class Diagram
 		makePercentageChart();
 		
 
-		frame = new JFrame("Diagrams");
-		makeMenuBar(frame);
-		Container contentPane = frame.getContentPane();
+		Container contentPane = new Container();
 		contentPane.setLayout(new BorderLayout());
 
 		chartPanel = makeChartPanel();
 		contentPane.add(chartPanel, BorderLayout.CENTER);
 
 	
-		frame.pack();
+	}
+	public Container getcontentPane()
+	{
+		return chartPanel;
+		
 	}
 	
 	/**

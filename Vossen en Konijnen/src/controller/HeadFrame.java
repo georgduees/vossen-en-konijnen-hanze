@@ -63,35 +63,19 @@ public class HeadFrame extends JFrame
 		makeMenuBar(frame);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		Container contentPane = frame.getContentPane();
+contentPane.setLayout(new BorderLayout());
+		contentPane.getPreferredSize();
+		simulatorContainer.getPreferredSize();
 		
-		
-		contentPane.setLayout(new BorderLayout());
 		center = makeCenter();
-		contentPane.add(center, BorderLayout.CENTER);
+		contentPane.add(center);
 		simulatorContainer.add(view.getViewPanel(), BorderLayout.CENTER);
 		
 		JPanel westPanel = makeWestPanel();
 		JPanel eastPanel = makeEastPanel();
 		simulatorContainer.add(westPanel, BorderLayout.WEST);
 		simulatorContainer.add(eastPanel, BorderLayout.EAST);
-		 try {
-	            // Set System L&F
-	        UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-	    } 
-	    catch (UnsupportedLookAndFeelException e) {
-	       // handle exception
-	    }
-	    catch (ClassNotFoundException e) {
-	       // handle exception
-	    }
-	    catch (InstantiationException e) {
-	       // handle exception
-	    }
-	    catch (IllegalAccessException e) {
-	       // handle exception
-	    }
-		 SwingUtilities.updateComponentTreeUI(frame);
-
+		
 		frame.pack();
 		frame.setVisible(true);
 		
@@ -109,8 +93,9 @@ public class HeadFrame extends JFrame
 		
 		
 		tabbedPanel.insertTab("Simulator", null,simulatorContainer, "SimulatorView",0);
-		JComponent SettingsPanel = new JPanel();
+		Container DiagramPanel = this.getDiagram().getcontentPane();
 		tabbedPanel.insertTab("Settings", null,this.settings.getContainer(), "Settings",1);
+		tabbedPanel.insertTab("Diagrams", null,DiagramPanel, "Diagrams",2);
 		
 		tabbedPanel.addChangeListener(new ChangeListener(){
 			public void stateChanged(ChangeEvent e){changeOfTab(e);}

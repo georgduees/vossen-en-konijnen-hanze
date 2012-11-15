@@ -191,7 +191,7 @@ public class Diagram
         // Makes the piechart with percentage animals
         dataPercentage = new DefaultPieDataset();
         chart3 = ChartFactory.createPieChart3D(
-                "Pie Chart 3D Demo 2",  // chart title
+                "Pie Chart",  // chart title
                 dataPercentage,                   // data
                 true,                   // include legend
                 true,

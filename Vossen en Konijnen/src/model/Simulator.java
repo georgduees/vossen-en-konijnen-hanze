@@ -76,7 +76,7 @@ public class Simulator implements Runnable
     public Simulator(int depth, int width)
     {
     	
-    	//intro.playSoundOnce();
+    	intro.playSoundOnce();
     	
     	
         if(width <= 0 || depth <= 0) {

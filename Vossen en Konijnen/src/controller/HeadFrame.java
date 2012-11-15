@@ -97,9 +97,9 @@ contentPane.setLayout(new BorderLayout());
 		Container DiagramPanel2 = this.getDiagram().getChart2();
 				Container DiagramPanel3 = this.getDiagram().getChart3();
 		tabbedPanel.insertTab("Settings", null,this.settings.getContainer(), "Settings",1);
-		tabbedPanel.insertTab("Diagram 1", null,DiagramPanel1, "Diagram 1",2);
-		tabbedPanel.insertTab("Diagram 2", null,DiagramPanel2, "Diagram 2",3);
-		tabbedPanel.insertTab("Diagram 3", null,DiagramPanel3, "Diagram 3",4);
+		tabbedPanel.insertTab("Alive Chart", null,DiagramPanel1, "Alive Chart",2);
+		tabbedPanel.insertTab("Death Chart", null,DiagramPanel2, "Death Chart",3);
+		tabbedPanel.insertTab("Pie Chart", null,DiagramPanel3, "Pie Chart",4);
 		tabbedPanel.addChangeListener(new ChangeListener(){
 			public void stateChanged(ChangeEvent e){changeOfTab(e);}
 		});
@@ -279,10 +279,10 @@ fox.setForeground(Color.blue);
         fileMenu.addSeparator();
         fileMenu.add(quitItem);
         
-        JMenu preferencesMenu = new JMenu("Preferences");
+        //JMenu preferencesMenu = new JMenu("Preferences");
         JMenu about = new JMenu("About");
         JMenu help = new JMenu("Help");
-		menuBar.add(preferencesMenu);
+		//menuBar.add(preferencesMenu);
 		menuBar.add(help);
 		menuBar.add(about);
 		
@@ -306,7 +306,7 @@ fox.setForeground(Color.blue);
 		});
 		
 		//Add the preferencesItem to the preferencesMenu
-		preferencesMenu.add(preferencesItem);
+		//preferencesMenu.add(preferencesItem);
 		about.add(aboutt);
 		help.add(helpp);
 	}
